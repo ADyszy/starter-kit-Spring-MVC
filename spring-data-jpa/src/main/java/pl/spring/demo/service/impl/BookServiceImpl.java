@@ -50,7 +50,10 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	@Transactional
-	public void updateBook(Long bookId, String paramName, Object value) throws UnknownParameterException {
+	public void updateBook(Long bookId, String paramName, Object value)
+			throws UnknownParameterException, NotExistingBookObjectUpdateException {
+		if(bookRepository.findOne(bookId) == null)
+			throw new NotExistingBookObjectUpdateException();	
 		switch (paramName) {
 		case "authors":
 			bookRepository.findOne(bookId).setAuthors((String) value);
