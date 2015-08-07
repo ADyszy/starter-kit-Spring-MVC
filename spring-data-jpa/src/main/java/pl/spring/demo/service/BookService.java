@@ -11,4 +11,10 @@ public interface BookService {
     List<BookTo> findBooksByAuthor(String author);
 
     BookTo saveBook(BookTo book);
+    void deleteBook(Long bookId);
+    //training.
+    void updateBook(Long bookId, String paramName, Object value) throws UnknownParameterException;
+    
+    
+	String findTitleByBookId(Long bookId);
 }

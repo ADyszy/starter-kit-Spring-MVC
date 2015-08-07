@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Lista książek w tabeli</title>
+    <link rel="stylesheet" th:href="@{/static/application.css}" href="./static/application.css" />
+</head>
+<body>
+    
+<div class="Table">
+    <div class="Title">
+        <p>Simple Book Table</p>
+    </div>
+    <div class="Heading">
+        <div class="Cell">
+            <p>id</p>
+        </div>
+        <div class="Cell">
+            <p>title</p>
+        </div>
+        <div class="Cell">
+            <p>author</p>
+        </div>
+         <div class="Cell">
+            <p>options</p>
+        </div>
+        <div class="Cell">
+            <p>
+                <form action="/workshop/book-adder" method="post">
+                    <input class="btn" type="submit" value="add new book"/>
+                </form>
+            </p>
+        </div>
+    </div>
+    <div class="Row" th:each="book : ${books}">
+        <div class="Cell">
+            <p th:text="${book.id}">id</p>
+        </div>
+        <div class="Cell">
+            <p th:text="${book.title}">title</p>
+        </div>
+        <div class="Cell">
+            <p th:text="${book.authors}">authors</p>
+        </div>
+        <div class="Cell">
+            <p>
+            	<form action="/workshop/delete-book" method="post">
+            		<input type="hidden" name="id" th:value="@{${book.id}}" />
+            		<input class="btn" type="submit" name="delete" value="delete" />
+            	</form>
+			</p>
+        </div>
+    </div>
+</div>
+
+    
+</body>
+</html>
