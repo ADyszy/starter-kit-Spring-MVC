@@ -1,23 +1,15 @@
 package pl.spring.demo.web.controller;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-import javax.naming.AuthenticationNotSupportedException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import net.minidev.json.JSONObject;
 import pl.spring.demo.service.BookService;
 import pl.spring.demo.to.BookTo;
 
