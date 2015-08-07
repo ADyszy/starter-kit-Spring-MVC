@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Book table</h2>
+  <p>lista ksiazek</p>            
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Option</th>
+      </tr>
+    </thead>
+    <tbody th:each="book : ${books}">
+      <tr>
+        <td><p th:text="${book.id}">id</p></td>
+        <td><p th:text="${book.title}">title</p></td>
+        <td><p th:text="${book.authors}">authors</p></td>
+        <p>
+          <form action="/workshop/delete-book" method="post">
+            <input type="hidden" name="id" th:value="@{${book.id}}" />
+            <input class="btn" type="submit" name="delete" value="delete" />
+          </form>
+      </p>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
