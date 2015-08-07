@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 
 import pl.spring.demo.service.BookService;
 import pl.spring.demo.service.UnknownParameterException;
-import pl.spring.demo.service.impl.NotExistingBookObjectUpdateException;
 import pl.spring.demo.to.BookTo;
 
 import java.util.List;
@@ -22,8 +21,8 @@ public class BookRestService {
 	public List<BookTo> findBooksByTitle(@RequestParam("titlePrefix") String titlePrefix) {
 		return bookService.findBooksByTitle(titlePrefix);
 	}
-
-	@RequestMapping(value = "/book", method = RequestMethod.DELETE)
+	
+	@RequestMapping(value = "/book", method = RequestMethod.DELETE) 
 	public void book(@RequestParam("id") Long bookId) {
 		bookService.deleteBook(bookId);
 	}
@@ -32,11 +31,11 @@ public class BookRestService {
 	public BookTo saveBook(@RequestBody BookTo book) {
 		return bookService.saveBook(book);
 	}
-
+	
 	@RequestMapping(value = "/update-book", method = RequestMethod.PUT)
-	public void book(@RequestParam("id") Long bookId, @RequestParam("paramName") String paramName,
-			@RequestParam("value") Object value)
-					throws UnknownParameterException, NotExistingBookObjectUpdateException {
+	public void book(	@RequestParam("id") Long bookId, 
+			@RequestParam("paramName") String paramName,
+			@RequestParam("value") Object value) throws UnknownParameterException {
 		bookService.updateBook(bookId, paramName, value);
 	}
 }

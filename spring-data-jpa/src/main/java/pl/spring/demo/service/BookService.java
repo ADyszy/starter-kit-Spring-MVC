@@ -14,8 +14,7 @@ public interface BookService {
     BookTo saveBook(BookTo book);
     void deleteBook(Long bookId);
     //training.
-	void updateBook(Long bookId, String paramName, Object value)
-			throws UnknownParameterException, NotExistingBookObjectUpdateException;
+    void updateBook(Long bookId, String paramName, Object value) throws UnknownParameterException, NotExistingBookObjectUpdateException;
     
     
 	String findTitleByBookId(Long bookId);

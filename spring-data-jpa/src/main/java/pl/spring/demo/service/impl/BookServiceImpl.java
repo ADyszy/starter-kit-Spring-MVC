@@ -51,7 +51,6 @@ public class BookServiceImpl implements BookService {
 	@Override
 	@Transactional
 	public void updateBook(Long bookId, String paramName, Object value)
-	//TODO: check ResponseEntity
 			throws UnknownParameterException, NotExistingBookObjectUpdateException {
 		if(bookRepository.findOne(bookId) == null)
 			throw new NotExistingBookObjectUpdateException();	
