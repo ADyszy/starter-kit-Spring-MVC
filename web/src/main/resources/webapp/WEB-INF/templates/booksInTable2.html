@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://thymeleaf.org">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Lista książek w tabeli</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -19,11 +19,10 @@
         <th>Id</th>
         <th>Title</th>
         <th>Author</th>
-        <th>Option</th>
       </tr>
     </thead>
-    <tbody th:each="book : ${books}">
-      <tr>
+    <tbody>
+      <tr th:each="book : ${books}">
         <td><p th:text="${book.id}">id</p></td>
         <td><p th:text="${book.title}">title</p></td>
         <td><p th:text="${book.authors}">authors</p></td>

@@ -14,12 +14,10 @@
         margin-left: auto;
         margin-right: auto;
         font-family: Tahoma, Geneva, sans-serif;
-        -webkit-box-shadow: 0px 0px 53px -6px rgba(0,0,0,0.4);
-        -moz-box-shadow: 0px 0px 53px -6px rgba(0,0,0,0.4);
-        box-shadow: 0px 0px 53px -6px rgba(0,0,0,0.4);
-        -webkit-border-radius: 25px;
-        -moz-border-radius: 25px;
-        border-radius: 25px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        border: solid 2px #E0E0E0;
     }
     .Title
     {
@@ -38,41 +36,30 @@
     .Row
     {
         display: table-row;
-        border: solid #DCDCDC;
     }
     .Cell
     {
         display: table-cell;
-        border-width: 1px;
         padding: 25px;
     }
 
-    .btn {
-        background: #3498db;
-        background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-        background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-        background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-        background-image: -o-linear-gradient(top, #3498db, #2980b9);
-        background-image: linear-gradient(to bottom, #3498db, #2980b9);
-        -webkit-border-radius: 25;
-        -moz-border-radius: 25;
-        border-radius: 25px;
-        font-family: Arial;
-        color: #ffffff;
-        font-size: 10px;
-        padding: 9px 20px 10px 20px;
-        text-decoration: none;
-    }
-
-    .btn:hover {
-        background: #3cb0fd;
-        background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-        background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-        background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-        background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-        background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-        text-decoration: none;
-    }
+	.btn {
+	  -webkit-border-radius: 7;
+	  -moz-border-radius: 7;
+	  border-radius: 7px;
+	  font-family: Arial;
+	  color: #5e5e5e;
+	  font-size: 14px;
+	  background: #f0f0f0;
+	  padding: 10px 20px 10px 20px;
+	  border: solid #dbdbdb 2px;
+	  text-decoration: none;
+	}
+	
+	.btn:hover {
+	  background: #3cb0fd;
+	  text-decoration: none;
+	}
 
 	.Box {
 		height: 400;
