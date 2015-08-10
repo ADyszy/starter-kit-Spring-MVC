@@ -12,6 +12,7 @@ import pl.spring.demo.service.UnknownParameterException;
 import pl.spring.demo.service.impl.NotExistingBookObjectUpdateException;
 import pl.spring.demo.to.BookTo;
 
+// Czy nie lepiej wzdyielic to w taki sposob ?
 @RestController
 @RequestMapping(value = "/bookCRUD")
 public class BookCRUDRest {
