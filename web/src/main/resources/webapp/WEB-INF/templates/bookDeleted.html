@@ -4,19 +4,26 @@
     <meta charset="UTF-8"/>
     <title>usunieta ksiazka</title>
     <link rel="stylesheet" th:href="@{/static/application.css}" href="./static/application.css" />
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src = "jquery.cre-animate.js"></script>
 </head>
 <body>
- 
- <div class="Table">
+  
+ <div style="text-align:center" class="Table">
  	<div class="inBox">   
 		Ksiazka o tytule 
-		<span style="color:blue" th:text="${bookTitle}"> bookTitle</span> 
+		<div style="padding:5px, text-align:center" class="Title" th:text="${bookTitle}"> bookTitle</div> 
 		zostala usunieta.
 	</div>
 	<div class="inBox"> 
-		<a style="color = blue" href="/workshop/booksInTable">wroc do listy ksiazek</a>
+		<p>
+            <form action="/workshop/booksInTable" method="get">
+                  <input class="btn" type="submit" value="powrót"/>
+            </form>
+         </p>
 	</div>
 </div>
- 
+
 </body>
 </html>

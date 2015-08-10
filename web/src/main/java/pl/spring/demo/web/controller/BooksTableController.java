@@ -14,7 +14,7 @@ import pl.spring.demo.service.BookService;
 import pl.spring.demo.to.BookTo;
 
 @Controller
-public class BooksInTableController {
+public class BooksTableController {
 	@Autowired
 	private BookService bookService;
 

@@ -1,6 +1,7 @@
 	body {
         max-width: 900px
         margin: 0 auto;
+        background: white;
     }
 
     .sample {
@@ -16,26 +17,46 @@
         font-family: Tahoma, Geneva, sans-serif;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
-        border-radius: 10px;
+        border-radius: 4px;
         border: solid 2px #E0E0E0;
+        background: white;
+        
+        color: silver;
+        animation-name: fadeIn;
+        animation-timing-function: ease;
+        animation-duration: 0.3s;
     }
     .Title
     {
+    	text-align: left;
         display: table-caption;
-        text-align: center;
-        font-weight: bold;
-        font-size: larger;
-        padding: 25px;
+        font-family: Impact, Charcoal, sans-serif;
+        font-size: 40px;
+        padding: 0px;
+        color: #3cb0fd;
+       
+        animation-name: fadeIn_blueColor;
+        animation-timing-function: ease;
+        animation-duration: 0.3s;
     }
     .Heading
     {
         display: table-row;
         font-weight: bold;
         text-align: center;
+        color: gray;
     }
     .Row
     {
-        display: table-row;
+        display: table-row;        
+    }
+    .Row:hover
+    {
+    	background: #EDEDED;
+    	
+    	animation-name: fadeIn_silverBackground;
+      	animation-timing-function: ease;
+      	animation-duration: 0.3s;
     }
     .Cell
     {
@@ -44,9 +65,9 @@
     }
 
 	.btn {
-	  -webkit-border-radius: 7;
-	  -moz-border-radius: 7;
-	  border-radius: 7px;
+	  -webkit-border-radius: 4;
+	  -moz-border-radius: 4;
+	  border-radius: 4px;
 	  font-family: Arial;
 	  color: #5e5e5e;
 	  font-size: 14px;
@@ -54,11 +75,17 @@
 	  padding: 10px 20px 10px 20px;
 	  border: solid #dbdbdb 2px;
 	  text-decoration: none;
+	  font-weight: bold;
 	}
 	
 	.btn:hover {
+	  color: white;
 	  background: #3cb0fd;
 	  text-decoration: none;
+	  
+	  animation-name: fadeIn_blueBackground;
+      animation-timing-function: ease;
+      animation-duration: 0.3s;
 	}
 
 	.Box {
@@ -73,6 +100,25 @@
         padding: 25px;
 	}
 	
+	@keyframes fadeIn_blueColor {
+	    0%   {color: transparent;}
+	    100% {color: #3cb0fd;}
+	}
+
+	@keyframes fadeIn {
+	    0%   {opacity: 0}
+	    100% {opacity: 100%}
+	}
+
+	@keyframes fadeIn_blueBackground {
+	    0%   {background: #f0f0f0; color: silver;}
+	    100% {background: #3cb0fd; color: white;}
+	}
+
+	@keyframes fadeIn_silverBackground {
+	    0%   {background: white;}
+	    100% {background: #EDEDED;}
+	}
 	
 	
 	

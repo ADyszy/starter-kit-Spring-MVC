@@ -1,43 +1,39 @@
 package pl.spring.demo.web.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import pl.spring.demo.service.BookService;
 import pl.spring.demo.service.UnknownParameterException;
 import pl.spring.demo.service.impl.NotExistingBookObjectUpdateException;
 import pl.spring.demo.to.BookTo;
 
-import java.util.List;
-
-//@Controller
-//@ResponseBody
-@RestController // no difference ?
-public class BookRestService {
-
+@RestController
+@RequestMapping(value = "/bookCRUD")
+public class BookCRUDRest {
+	
 	@Autowired
-	private BookService bookService;
-
-	@RequestMapping(value = "/books-by-title", method = RequestMethod.GET)
-	public List<BookTo> findBooksByTitle(@RequestParam("titlePrefix") String titlePrefix) {
-		return bookService.findBooksByTitle(titlePrefix);
-	}
-
-	@RequestMapping(value = "/book", method = RequestMethod.DELETE)
+	BookService bookService;	
+	
+	@RequestMapping(method = RequestMethod.DELETE)
 	public void book(@RequestParam("id") Long bookId) {
 		bookService.deleteBook(bookId);
 	}
 
-	@RequestMapping(value = "/book", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public BookTo saveBook(@RequestBody BookTo book) {
 		return bookService.saveBook(book);
 	}
 
-	@RequestMapping(value = "/book", method = RequestMethod.PUT)
+	@RequestMapping(method = RequestMethod.PUT)
 	public void book(@RequestParam("id") Long bookId, @RequestParam("paramName") String paramName,
 			@RequestParam("value") Object value)
 					throws UnknownParameterException, NotExistingBookObjectUpdateException {
 		bookService.updateBook(bookId, paramName, value);
 	}
+	
 }

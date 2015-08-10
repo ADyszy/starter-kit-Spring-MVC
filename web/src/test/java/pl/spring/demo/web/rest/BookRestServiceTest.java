@@ -109,7 +109,7 @@ public class BookRestServiceTest {
     	String paramName = "title";
     	String value = "anotherTitle";
     	// when
-    	ResultActions response = this.mockMvc.perform(put("/update-book?id=" + bookId 
+    	ResultActions response = this.mockMvc.perform(put("/book?id=" + bookId 
     			+ "&paramName=" + paramName + "&value=" + value)
     			.accept(MediaType.APPLICATION_JSON)
     			.contentType(MediaType.APPLICATION_JSON));
